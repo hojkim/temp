@@ -9,18 +9,17 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     private var playCount = Random.nextInt(0, 100000)
+    private val tvPlayCount: TextView by lazy { findViewById<TextView>(R.id.tvPlayCount)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val tvPlayCount = findViewById<TextView>(R.id.tvPlayCount)
         tvPlayCount.text = "$playCount plays"
     }
 
     fun playClicked (view: View) {
         playCount++
-        val tvPlayCount = findViewById<TextView>(R.id.tvPlayCount)
         tvPlayCount.text = "$playCount plays"
     }
 
